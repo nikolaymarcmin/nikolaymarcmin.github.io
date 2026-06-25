@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paris — Nikolay Marcmin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="thoughts.html">Thoughts</a>
+      <a href="poems.html">Poems</a>
+      <a href="photos.html">Photos</a>
+    </nav>
+  </header>
+
+  <main>
+    <a href="photos.html" class="gallery-back">← Photos</a>
+
+    <section class="gallery-header">
+      <h2>Paris</h2>
+    </section>
+
+    <p class="gallery-note">This is a selection of photos capturing the essence of Paris. For print purchases or to view additional photos, reach out at <a href="mailto:nick.marcmin@gmail.com">nick.marcmin@gmail.com</a></p>
+
+    <div class="photo-grid" id="photoGrid">
+      <img src="images/paris/01.jpg" alt="Paris" onclick="openPhoto(0)">
+      <img src="images/paris/02.jpg" alt="Paris" onclick="openPhoto(1)">
+      <img src="images/paris/03.jpg" alt="Paris" onclick="openPhoto(2)">
+      <img src="images/paris/04.jpg" alt="Paris" onclick="openPhoto(3)">
+      <img src="images/paris/05.jpg" alt="Paris" onclick="openPhoto(4)">
+      <img src="images/paris/06.jpg" alt="Paris" onclick="openPhoto(5)">
+      <img src="images/paris/07.jpg" alt="Paris" onclick="openPhoto(6)">
+      <img src="images/paris/08.jpg" alt="Paris" onclick="openPhoto(7)">
+      <img src="images/paris/09.jpg" alt="Paris" onclick="openPhoto(8)">
+      <img src="images/paris/10.jpg" alt="Paris" onclick="openPhoto(9)">
+      <img src="images/paris/11.jpg" alt="Paris" onclick="openPhoto(10)">
+      <img src="images/paris/12.jpg" alt="Paris" onclick="openPhoto(11)">
+      <img src="images/paris/13.jpg" alt="Paris" onclick="openPhoto(12)">
+        <img src="images/paris/14.jpg" alt="Paris" onclick="openPhoto(13)">
+        <img src="images/paris/15.jpg" alt="Paris" onclick="openPhoto(14)">
+        <img src="images/paris/16.jpg" alt="Paris" onclick="openPhoto(15)">
+        <img src="images/paris/17.jpg" alt="Paris" onclick="openPhoto(16)">
+        <img src="images/paris/18.jpg" alt="Paris" onclick="openPhoto(17)">
+        <img src="images/paris/19.jpg" alt="Paris" onclick="openPhoto(18)">
+        <img src="images/paris/20.jpg" alt="Paris" onclick="openPhoto(19)">
+        <img src="images/paris/21.jpg" alt="Paris" onclick="openPhoto(20)">
+        <img src="images/paris/22.jpg" alt="Paris" onclick="openPhoto(21)">
+        <img src="images/paris/23.jpg" alt="Paris" onclick="openPhoto(22)">
+        <img src="images/paris/24.jpg" alt="Paris" onclick="openPhoto(23)">
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Nikolay Marcmin</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-prev" onclick="event.stopPropagation(); changePhoto(-1)">‹</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+    <button class="lightbox-next" onclick="event.stopPropagation(); changePhoto(1)">›</button>
+  </div>
+
+</body>
+
+<script>
+  const photos = [
+    'images/paris/01.jpg',
+    'images/paris/02.jpg',
+    'images/paris/03.jpg',
+    'images/paris/04.jpg',
+    'images/paris/05.jpg',
+    'images/paris/06.jpg',
+    'images/paris/07.jpg',
+    'images/paris/08.jpg',
+    'images/paris/09.jpg',
+    'images/paris/10.jpg',
+    'images/paris/11.jpg',
+    'images/paris/12.jpg',
+    'images/paris/13.jpg',
+    'images/paris/14.jpg',
+    'images/paris/15.jpg',
+    'images/paris/16.jpg',
+    'images/paris/17.jpg',
+    'images/paris/18.jpg',
+    'images/paris/19.jpg',
+    'images/paris/20.jpg',
+    'images/paris/21.jpg',
+    'images/paris/22.jpg',
+    'images/paris/23.jpg',
+    'images/paris/24.jpg',
+  ];
+
+  let current = 0;
+
+  function openPhoto(index) {
+    current = index;
+    document.getElementById('lightboxImg').src = photos[current];
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function changePhoto(direction) {
+    current = (current + direction + photos.length) % photos.length;
+    document.getElementById('lightboxImg').src = photos[current];
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight') changePhoto(1);
+    if (e.key === 'ArrowLeft') changePhoto(-1);
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nature — Nikolay Marcmin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="thoughts.html">Thoughts</a>
+      <a href="poems.html">Poems</a>
+      <a href="photos.html">Photos</a>
+    </nav>
+  </header>
+
+  <main>
+    <a href="photos.html" class="gallery-back">← Photos</a>
+
+    <section class="gallery-header">
+      <h2>Nature</h2>
+    </section>
+
+    <p class="gallery-note">This is a selection of street photography. For print purchases or to view additional photos, reach out at <a href="mailto:nick.marcmin@gmail.com">nick.marcmin@gmail.com</a></p>
+
+    <div class="photo-grid" id="photoGrid">
+      <img src="images/nature/01.jpg" alt="Nature" onclick="openPhoto(0)">
+      <img src="images/nature/02.jpg" alt="Nature" onclick="openPhoto(1)">
+      <img src="images/nature/03.jpg" alt="Nature" onclick="openPhoto(2)">
+      <img src="images/nature/04.jpg" alt="Nature" onclick="openPhoto(3)">
+      <img src="images/nature/05.jpg" alt="Nature" onclick="openPhoto(4)">
+      <img src="images/nature/06.jpg" alt="Nature" onclick="openPhoto(5)">
+      <img src="images/nature/07.jpg" alt="Nature" onclick="openPhoto(6)">
+      <img src="images/nature/08.jpg" alt="Nature" onclick="openPhoto(7)">
+      <img src="images/nature/09.jpg" alt="Nature" onclick="openPhoto(8)">
+      <img src="images/nature/10.jpg" alt="Nature" onclick="openPhoto(9)">
+      <img src="images/nature/11.jpg" alt="Nature" onclick="openPhoto(10)">
+      <img src="images/nature/12.jpg" alt="Nature" onclick="openPhoto(11)">
+      <img src="images/nature/13.jpg" alt="Nature" onclick="openPhoto(12)">
+        <img src="images/nature/14.jpg" alt="Nature" onclick="openPhoto(13)">
+        <img src="images/nature/15.jpg" alt="Nature" onclick="openPhoto(14)">
+        <img src="images/nature/16.jpg" alt="Nature" onclick="openPhoto(15)">
+        <img src="images/nature/17.jpg" alt="Nature" onclick="openPhoto(16)">
+        <img src="images/nature/18.jpg" alt="Nature" onclick="openPhoto(17)">
+        <img src="images/nature/19.jpg" alt="Nature" onclick="openPhoto(18)">
+        <img src="images/nature/20.jpg" alt="Nature" onclick="openPhoto(19)">
+        <img src="images/nature/21.jpg" alt="Nature" onclick="openPhoto(20)">
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Nikolay Marcmin</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-prev" onclick="event.stopPropagation(); changePhoto(-1)">‹</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+    <button class="lightbox-next" onclick="event.stopPropagation(); changePhoto(1)">›</button>
+  </div>
+
+</body>
+
+<script>
+  const photos = [
+    'images/nature/01.jpg',
+    'images/nature/02.jpg',
+    'images/nature/03.jpg',
+    'images/nature/04.jpg',
+    'images/nature/05.jpg',
+    'images/nature/06.jpg',
+    'images/nature/07.jpg',
+    'images/nature/08.jpg',
+    'images/nature/09.jpg',
+    'images/nature/10.jpg',
+    'images/nature/11.jpg',
+    'images/nature/12.jpg',
+    'images/nature/13.jpg',
+    'images/nature/14.jpg',
+    'images/nature/15.jpg',
+    'images/nature/16.jpg',
+    'images/nature/17.jpg',
+    'images/nature/18.jpg',
+    'images/nature/19.jpg',
+    'images/nature/20.jpg',
+    'images/nature/21.jpg',
+  ];
+
+  let current = 0;
+
+  function openPhoto(index) {
+    current = index;
+    document.getElementById('lightboxImg').src = photos[current];
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function changePhoto(direction) {
+    current = (current + direction + photos.length) % photos.length;
+    document.getElementById('lightboxImg').src = photos[current];
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight') changePhoto(1);
+    if (e.key === 'ArrowLeft') changePhoto(-1);
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</html>

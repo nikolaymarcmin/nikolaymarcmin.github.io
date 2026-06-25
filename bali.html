@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bali — Nikolay Marcmin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="thoughts.html">Thoughts</a>
+      <a href="poems.html">Poems</a>
+      <a href="photos.html">Photos</a>
+    </nav>
+  </header>
+
+  <main>
+    <a href="photos.html" class="gallery-back">← Photos</a>
+
+    <section class="gallery-header">
+      <h2>Bali</h2>
+    </section>
+
+    <p class="gallery-note">This is a selection of photos capturing the essence of Bali. For print purchases or to view additional photos, reach out at <a href="mailto:nick.marcmin@gmail.com">nick.marcmin@gmail.com</a></p>
+
+    <div class="photo-grid" id="photoGrid">
+      <img src="images/bali/01.jpg" alt="Bali" onclick="openPhoto(0)">
+      <img src="images/bali/02.jpg" alt="Bali" onclick="openPhoto(1)">
+      <img src="images/bali/03.jpg" alt="Bali" onclick="openPhoto(2)">
+      <img src="images/bali/04.jpg" alt="Bali" onclick="openPhoto(3)">
+      <img src="images/bali/05.jpg" alt="Bali" onclick="openPhoto(4)">
+      <img src="images/bali/06.jpg" alt="Bali" onclick="openPhoto(5)">
+      <img src="images/bali/07.jpg" alt="Bali" onclick="openPhoto(6)">
+      <img src="images/bali/08.jpg" alt="Bali" onclick="openPhoto(7)">
+      <img src="images/bali/09.jpg" alt="Bali" onclick="openPhoto(8)">
+      <img src="images/bali/10.jpg" alt="Bali" onclick="openPhoto(9)">
+      <img src="images/bali/11.jpg" alt="Bali" onclick="openPhoto(10)">
+      <img src="images/bali/12.jpg" alt="Bali" onclick="openPhoto(11)">
+      <img src="images/bali/13.jpg" alt="Bali" onclick="openPhoto(12)">
+        <img src="images/bali/14.jpg" alt="Bali" onclick="openPhoto(13)">
+        <img src="images/bali/15.jpg" alt="Bali" onclick="openPhoto(14)">
+        <img src="images/bali/16.jpg" alt="Bali" onclick="openPhoto(15)">
+        <img src="images/bali/17.jpg" alt="Bali" onclick="openPhoto(16)">
+        <img src="images/bali/18.jpg" alt="Bali" onclick="openPhoto(17)">
+        <img src="images/bali/19.jpg" alt="Bali" onclick="openPhoto(18)">
+        <img src="images/bali/20.jpg" alt="Bali" onclick="openPhoto(19)">
+        <img src="images/bali/21.jpg" alt="Bali" onclick="openPhoto(20)">
+        <img src="images/bali/22.jpg" alt="Bali" onclick="openPhoto(21)">
+        <img src="images/bali/23.jpg" alt="Bali" onclick="openPhoto(22)">
+        <img src="images/bali/24.jpg" alt="Bali" onclick="openPhoto(23)">
+        <img src="images/bali/25.jpg" alt="Bali" onclick="openPhoto(24)">
+        <img src="images/bali/26.jpg" alt="Bali" onclick="openPhoto(25)">
+        <img src="images/bali/27.jpg" alt="Bali" onclick="openPhoto(26)">
+        <img src="images/bali/28.jpg" alt="Bali" onclick="openPhoto(27)">
+        <img src="images/bali/29.jpg" alt="Bali" onclick="openPhoto(28)">
+        <img src="images/bali/30.jpg" alt="Bali" onclick="openPhoto(29)">
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Nikolay Marcmin</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-prev" onclick="event.stopPropagation(); changePhoto(-1)">‹</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+    <button class="lightbox-next" onclick="event.stopPropagation(); changePhoto(1)">›</button>
+  </div>
+
+</body>
+
+<script>
+  const photos = [
+    'images/bali/01.jpg',
+    'images/bali/02.jpg',
+    'images/bali/03.jpg',
+    'images/bali/04.jpg',
+    'images/bali/05.jpg',
+    'images/bali/06.jpg',
+    'images/bali/07.jpg',
+    'images/bali/08.jpg',
+    'images/bali/09.jpg',
+    'images/bali/10.jpg',
+    'images/bali/11.jpg',
+    'images/bali/12.jpg',
+    'images/bali/13.jpg',
+    'images/bali/14.jpg',
+    'images/bali/15.jpg',
+    'images/bali/16.jpg',
+    'images/bali/17.jpg',
+    'images/bali/18.jpg',
+    'images/bali/19.jpg',
+    'images/bali/20.jpg',
+    'images/bali/21.jpg',
+    'images/bali/22.jpg',
+    'images/bali/23.jpg',
+    'images/bali/24.jpg',
+    'images/bali/25.jpg',
+    'images/bali/26.jpg',
+    'images/bali/27.jpg', 
+    'images/bali/28.jpg',
+    'images/bali/29.jpg',
+    'images/bali/30.jpg',
+  ];
+
+  let current = 0;
+
+  function openPhoto(index) {
+    current = index;
+    document.getElementById('lightboxImg').src = photos[current];
+    document.getElementById('lightbox').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function changePhoto(direction) {
+    current = (current + direction + photos.length) % photos.length;
+    document.getElementById('lightboxImg').src = photos[current];
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight') changePhoto(1);
+    if (e.key === 'ArrowLeft') changePhoto(-1);
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+
+</html>

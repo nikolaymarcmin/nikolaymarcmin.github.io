@@ -1,0 +1,471 @@
+/* ── Typography ── */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Gill Sans', sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  background-color: #eaddcb;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Navigation ── */
+header {
+  padding: 48px 0 64px;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* ── Hero ── */
+.hero {
+  padding: 32px 0 24px;
+  border-top: 1px solid #e2e2ab;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-photo {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 36px;
+  flex-shrink: 0;
+  margin-left: -20px;
+  margin-top: 0px;
+}
+
+.hero h1 {
+  font-family: 'Gill Sans', serif;
+  font-size: 60px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.tagline {
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+
+/* ── Intro ── */
+.intro {
+  padding: 48px 0 96px;
+  border-top: 1px solid #decfb4;
+}
+
+.intro p {
+  font-family: 'Gill Sans', serif;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #043f3a;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid #e0e0d8;
+  padding: 32px 0 48px;
+  font-size: 13px;
+  opacity: 0.35;
+}
+
+/* ── Page Header ── */
+.page-header {
+  padding: 32px 0 48px;
+  border-top: 1px solid #e0e0d8;
+}
+
+.page-header h2 {
+  font-family: 'Gill Sans', serif;
+  font-size: 36px;
+  font-weight: 200;
+  letter-spacing: 1.0em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* ── Books Grid ── */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 40px 32px;
+  padding: 16px 0 80px;
+}
+
+.book {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.book-cover {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 2px 6px 6px 2px;
+  overflow: hidden;
+  position: relative;
+  border: 0.5px solid #d8d3c8;
+  box-shadow: -4px 4px 0px #d8d3c8, -7px 7px 0px #e8e3d8;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 20%;
+}
+
+.book:hover .book-cover {
+  transform: translateX(4px) rotate(3.0deg);
+  box-shadow: -6px 6px 0px #c8c3b8, -10px 10px 0px #ddd8cc;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  display: block;
+}
+
+.book-spine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.10);
+  z-index: 1;
+}
+
+.book-title {
+  font-family: 'Gill Sans', serif;
+  margin-top: 14px;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #043d3f;
+  opacity: 0.5;
+}
+
+/* ── Photo Grid ── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding-bottom: 80px;
+}
+
+.photo-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.photo-grid img:hover {
+  opacity: 0.85;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: white;
+  font-size: 48px;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+  padding: 0 24px;
+}
+
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 1;
+}
+
+/* ── Gallery Header ── */
+.gallery-header {
+  padding: 2px 0 40px;
+}
+
+.gallery-header h2 {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #043d3f;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.gallery-back {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1a1a1a;
+  opacity: 0.4;
+  margin-bottom: 24px;
+  margin-top: 8px;
+  transition: opacity 0.2s;
+}
+
+.gallery-back:hover {
+  opacity: 1;
+}
+
+/* ── Gallery Note ── */
+.gallery-note {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color:  #043d3f;
+  opacity: 0.4;
+  padding: 2px 0 64px;
+  border-top: 1px solid #e2e2ab;
+}
+
+.gallery-note a {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.gallery-note a:hover {
+  opacity: 0.6;
+}
+
+
+/* ── Poems List ── */
+.poems-list {
+  padding-bottom: 80px;
+}
+
+.poem-item {
+  border-bottom: 0.5px solid #6b5716;;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.poem-item:hover {
+  opacity: 0.5;
+}
+
+.poem-title-link {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  color: #043f3a;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ── Poem Detail ── */
+.poem-detail {
+  display: none;
+  padding-bottom: 80px;
+}
+
+.poem-detail-title {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  cursor: pointer;
+  padding: 20px 0;
+  border-bottom: 0.5px solid #bcb7a5;
+  margin-bottom: 20px;
+  transition: opacity 0.1s;
+}
+
+.poem-detail-title:hover {
+  opacity: 1;
+}
+
+.poem-detail-text p {
+  font-family: 'Gill Sans', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #043f3a;
+}
+
+/* ── Thought List ── */
+.thought-list {
+  padding-bottom: 80px;
+}
+
+.thought-item {
+  border-bottom: 0.5px solid #6b5716;;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.thought-item:hover {
+  opacity: 0.5;
+}
+
+.thought-title-link {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  color: #043f3a;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ── Thought Detail ── */
+.thought-detail {
+  display: none;
+  padding-bottom: 80px;
+}
+
+.thought-detail-title {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  cursor: pointer;
+  padding: 20px 0;
+  border-bottom: 0.5px solid #bcb7a5;
+  margin-bottom: 20px;
+  transition: opacity 0.1s;
+}
+
+.thought-detail-title:hover {
+  opacity: 1;
+}
+
+.thought-detail-text p {
+  font-family: 'Gill Sans', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #043f3a;
+  margin-bottom: 20px;
+}
+
+.thought-heading {
+  font-family: 'Gill Sans', serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #043f3a;
+  margin-bottom: 20px;
+  font-style: bold;
+}
+
+/* ── Bio ── */
+.bio {
+  padding: 0 0 96px;
+}
+
+.bio p {
+  font-family: 'Gill Sans', serif;
+  font-size: 20px;
+  line-height: 1.7;
+  color: #043f3a;
+  margin-bottom: 32px;
+}
+
+.bio-intro {
+  font-size: 20px !important;
+  line-height: 1.7;
+  color: #043f3a !important;
+}
+
+.bio-date {
+  font-size: 16px !important;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+  margin-top: 48px;
+}

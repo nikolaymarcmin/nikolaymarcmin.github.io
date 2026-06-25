@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thoughts — Nikolay Marcmin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="thoughts.html">Thoughts</a>
+      <a href="poems.html">Poems</a>
+      <a href="photos.html">Photos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <h2>Thoughts</h2>
+    </section>
+
+    <div class="thought-list" id="thoughtsList">
+
+      <div class="thought-item" onclick="openThought('thought1')">
+        <p class="thought-title-link">Rethinking Unit Economics for the Physical AI Era</p>
+      </div>
+
+      <div class="thought-item" onclick="openThought('thought2')">
+        <p class="thought-title-link">AI Won't Replace Strategic Finance. It Will Expose the Weak Version of It.(WIP)</p>
+      </div>
+
+    </div>
+
+    <div class="thought-detail" id="thought1" style="display:none">
+      <p class="thought-detail-title" onclick="closeThought('thought1')">Rethinking Unit Economics for the Physical AI Era</p>
+      <div class="thought-detail-text">
+        <p> Those in finance, and even those who just touch it, often hear the term "unit economics." The number of times I have had to explain unit economics is staggering. And quite often I used different ways to approach the question. This inconsistency in how I explained unit economics prompted me to sit down and think through what unit economics actually is, why it is used so frequently in finance, and what is different about it in the Physical AI space.</p>
+        <h3 class="thought-heading">What is unit economics?</h3>
+        <p> Unit economics is a thing or an activity that generates value for its user. A share of that value is captured by a company as revenue. Delivering that value to the user requires the company to deploy resources that either exceed the captured share of value (generating a loss per unit) or, what companies hope for, fall significantly below that share in value (generating profits per unit). It's not the same as the gross or net profit you see in financial statements, as it doesn't account for the noise of overheads, one-time costs, R&D investment, sales force, etc. It's a basic foundational atom of economic value creation at the company that is tied to the nature of the company's product. Different products within the same company will have different unit economics. It might be a commercial transaction processed, a robotaxi ride, a customer acquired, a traffic camera, a nuclear microreactor, an oil well, an AI chatbot query, a subscription seat, a mile of freight delivery, a shipping container; the list goes on. Additionally, the same activity can be looked at from different angles, resulting in different unit economics. For instance, unit economics for commercial freight delivery can be a mile, a truck, or a trip. Regardless of the unit economics a company chooses, consistent usage, appropriate revenue and cost allocation, and their inclusion in actual decision-making are crucial.</p>
+        <p> Unit economics helps companies analyze multiple questions:</p>
+        <p> 1. Do we deploy resources efficiently? </p>
+        <p> 2. Are we able to capture maximum value from our product? </p>   
+        <p> 3. Does scaling hurt or help our profits?</p>
+        <p> A business with healthy unit economics gets stronger as it grows. A business with broken unit economics loses money faster if there is no realistic plan in place to improve it. The aggregate P&L will eventually tell you which one you have. The beauty of unit economics is that it tells that story ahead of time.</p>
+        <h3 class="thought-heading">Unit economics of a physical product.</h3>
+        <p> In the classic world of physical goods, the concept of unit economics is quite simple. It's commonly the physical good itself (a thing that exists in the physical world as a physical object). For example, a car, a microwave, or a goat. The value is derived by taking its consumer price and deducting the marginal cost to make it and deliver it into the hands of the end consumer, including raw materials, direct labor, freight, and other variable and directly attributable costs. The unit is a discrete object created, delivered, and consumed at a point in time. Costs are primarily COGS that scale but likely improve on a per-unit basis with volume. Companies incur other costs that have a primarily fixed nature, such as building a factory, production tools, marketing, and G&A, which need to be recovered through scaling the sale of products with positive contribution margins. Value from the physical good accrues to the company at the moment of a single transaction, where ownership of the good transfers from the seller to the customer.</p>
+        <h3 class="thought-heading">How did SaaS change things?</h3>
+        <p> Software products are different from physical goods. Software normally comes with sizable upfront development costs to create the software, while directly attributable costs to scale the software and deliver it to end users are virtually zero. Whether software is used by 10 or 1,000 users doesn't drastically change its cost structure (primarily the data infrastructure that supports operability of the software and customer support). So investors normally expect 70–90% contribution margins from SaaS products. The unit economics in the SaaS world becomes not the piece of software, but instead the human using that software.</p>
+        <p> The focus of these companies has turned from production to customer acquisition, retention, and upsell. Value from the unit economics of a SaaS product accrues to the company over the lifetime of the customer, not at the moment of sale. The key performance metrics in SaaS are tied primarily to the customer, not the product: for instance, LTV (lifetime value), CAC (customer acquisition cost), the LTV/CAC ratio, net revenue retention, magic number, etc. Even though the focus of the company became the customer rather than the product, companies are still pursuing scale to recover their fixed cost basis (tied to development and customer acquisition costs). SaaS products generate higher contribution margins than physical products, but they also come with higher uncertainty about the total value captured, as value accrues over time rather than in a single moment of sale. The strategy of companies becomes "acquire customers fast, retain as cheaply as possible, upsell as often as you can, and increase switching costs." Unit economics with low marginal costs incentivizes companies to aggressively pursue customer growth, making it the key topic of executives' attention.</p>
+        <h3 class="thought-heading">What happened when Software AI entered the market?</h3>
+        <p> Large language models arrived and reintroduced the thing SaaS had spent a few decades eliminating: a meaningful, recurring marginal cost. Every interaction with Claude or ChatGPT carries a variable cost driven by model consumption of GPU/CPU and energy. The benefits of the virtually zero marginal costs of a traditional SaaS product evaporated, as each query runs the model again, and the more information that query needs to account for (for instance, the history of prior communication), the higher the cost of a new query is. Agentic AI takes it even further, as each request to execute a task triggers a chain of reasoning, tool calls, information retrievals, and retries, causing the cost of a single session to multiply. Inference cost is frequently the largest variable line that scales with usage, presenting economic friction to increased utilization.</p> 
+        <p> The unit economics in the Software AI world shifted from the customer to the query. Flat-rate subscriptions of a SaaS business break when heavy usage drives the cost per interaction substantially over the flat subscription fee, to the point where low usage doesn't offset it. That's why usage-based and hybrid pricing have returned, to price utilization closer to the cost to serve. </p>
+        <p> What also became important is whether the company selling a Software AI product owns its data processing infrastructure or rents it. Companies that are vertically integrated, owning the model and the data infra, carry the inference cost (data centers, energy) internally and have better opportunities and incentives to improve the efficiency of the model and the cost of data processing. However, building your own data centers is a huge deterrent for a software-native company, so many companies opt to specialize in the model and product, renting their data infrastructure from providers. This business model leaves companies with fewer opportunities to improve their contribution margins, as data infra providers charge per token with margins built into the pricing and have fewer incentives for optimization other than competition. More usage no longer means leverage; it means more cost. The discipline shifts from "acquire and retain cheaply" back to "serve profitably," a concept that is familiar to the physical product space.<</p>
+        <h3 class="thought-heading">What is unique about economics of a Physical AI asset?</h3>
+        <p> Physical AI assets include humanoids, autonomous vehicles, warehouse robots, drones, and other machines that perceive the world and act in it to fulfill a task. This class of products is commonly sold as a service: robotics-as-a-service, capacity-as-a-service, or labor-as-a-service. The unit economics that generates value becomes the work performed. The framing has shifted from "seat" in the traditional SaaS space to "work done"; value capture becomes more outcome-driven rather than customer-driven.</p>
+        <p> Economic value creation of a Physical AI asset has a hybrid nature; it doesn't fit perfectly into the profile of a traditional physical good or a SaaS product. The traditional model can't be applied because the asset is not sold, locking in margins at the point of sale; instead, it's deployed to deliver value to its consumer over time, so in that sense it resembles a SaaS product. However, the marginal cost of a Physical AI product is not virtually zero. This is an actual physical product that carries the cost of hardware, data, spare parts, installation, field operations, powering, repairing, human oversight, retiring, etc. This makes a Physical AI product unique: it has a recurring revenue stream normally associated with a SaaS product, paired with a capital-intensive production model associated with traditional physical products. The revenue from deployment of a Physical AI product now has to carry the burden of covering the upfront development costs, customer acquisition costs, installation/integration costs, cost of physical parts, cost to serve, etc. The value of the outcomes delivered to customers by deployment of a Physical AI asset has to be high enough to cover the costs and achieve the profitability expectations of investors now accustomed to SaaS margins and the adoption rates of Software AI.</p>
+        <p> The overall economic profile of a Physical AI asset is assessed by its ability to generate a stream of revenue over the full operating life cycle that covers upfront capital plus ongoing operating costs. This value converted into revenue is often tied to deliveries completed, items picked, or miles driven, but primarily to the cost of labor that the Physical AI asset displaced or the cost of the legacy machine it replaced. The core question becomes: can this unit deliver a unit of work at a fully loaded cost below the incumbent, at high enough utilization, to earn an acceptable return on the capital deployed? There are a few performance metrics that become critical to the Physical AI asset: </p>
+        <p> - Utilization. In a SaaS world, the revenue captured by the company from selling a "seat" on a subscription basis is the same regardless of how heavily the capabilities of the product are being used, or whether they are used at all. With a Physical AI asset the situation is different. If it's sold to the customer under a "$ per outcome" pricing structure, it only generates revenue when used. An idle unit might not be wasting ongoing operating costs, but it does waste the cost of capital used to develop it and the cost of a shortened lifespan, as a more advanced and capable machine is being developed to replace it. Physical AI unit economics is highly driven by uptime, operating hours, and throughput, similar to the logic that governs airlines, hotels, and equipment rentals. Utilization is a variable factor that has massive downstream consequences for unit economics and, hence, must become a key focus point for companies in this space. </p>
+        <p> - Scale. SaaS products don't get impacted by economies of scale as much as a Physical AI product does. Integration of SaaS products into the software universe of an enterprise is usually a tailored endeavor that creates meaningful revenue streams from software implementations and customizations. As the production volumes of Physical AI assets increase, Wright's Law kicks in, experience improves the efficiency of production methods, and the cost of components goes down with volume discounts. Physical AI assets experience a similar effect to what we observed with wind turbines, solar panels, and electric batteries. The more units are built, the cheaper each unit becomes. For companies building Physical AI products, the ability to scale, optimization of hardware architecture, and investment in production methods become critical factors impacting unit economics.</p>
+        <p> - Autonomy. Physical AI assets quite often operate with a human in the loop who supports the operational capabilities of the asset when the software lacks the capacity to handle a specific edge-case scenario of reality. Think of Waymo's teleoperation, where a remote assistance operator gets involved in moving a vehicle out of a situation that the software can't handle. The labor costs of human supervision go into operating costs, dragging margins down. As software capabilities improve, allowing for more autonomous operation, unit margins improve. Quite often, improving the software model requires data coming from deployment of the assets; this is how scale becomes another contributor to the unit economics, by creating a data flywheel that feeds data into model training, which in turn increases the autonomy of the Physical AI asset.</p>
+        <p> - Upgrades. When companies improve the cost per unit of a traditional product through volume discounts, production methods, etc., those improvements do not go backward to improve the cost of units that have already been produced. There is no backward cost improvement. Physical AI assets, however, do enjoy the benefits of software improvements, provided that the hardware of the units allows for it. When the capabilities of the software improve, those improvements can be sent wirelessly to the entire fleet of Physical AI assets, raising the unit economics of all of them. Scale and a proper data flywheel enhance their importance through their ability to impact the unit economics of the entire fleet of Physical AI assets. What also becomes important is designing hardware in a way that accounts for future software improvements, not just current software capabilities at the moment of unit production to fulfill current customer requirements.</p>
+        <p> - Ownership and financing. With traditional products, ownership is usually transferred to the customer at the moment of sale, enabling the customer to capture all benefits from using the product. On some occasions, the seller finances the product, either itself or through a participating financial institution, but value still accrues to the customer after the transaction closes, as the product is being used. The seller captures the value at the moment of sale. With a SaaS product, both customers and sellers capture the value over time. Customers use the product to achieve certain outcomes over time and pay a subscription fee to the seller; in other words, financing is in a sense included in the subscription fee structure. The ownership and financing structure of a Physical AI product can fall anywhere between the two models. Let's consider two scenarios:</p>
+        <p> 1. The seller retains ownership of the assets, selling their utilization to the customer on an "as-a-service" basis. This resembles a SaaS model, where the seller accrues value over the useful life of the asset. However, if the revenue is tied to the outcome and not to time periods, the revenue stream is not as predictable as that of a SaaS product. What complicates the matter even further for the seller is that the seller has less control over utilization of the asset by the customer, so while the seller retains ownership of the asset and all the risks and costs associated with that, the customer is given a lot of control over the revenue stream that affects the unit economics of the asset on the seller's books. The seller carries the upfront development costs, the cost of improving capabilities, the cost to serve, and capital costs, but doesn't fully control the revenue stream needed to cover those costs, and also needs to carry the cost of incentivizing increased utilization by the customer.</p>
+        <p> 2. The seller transfers ownership of the Physical AI asset to the customer. In this case, the customer has incentives to utilize the product to the maximum of its abilities, as they capture full value over its useful life. However, if the seller accrues its value at the moment of the transaction, it loses the incentive to invest in improving asset capabilities. Those incentives and performance requirements become hours of contractual negotiations between the parties, turn into pages of legal language, extend time to adoption, hinder the pace of scaling, create the need for compliance monitoring, and create all sorts of friction.</p>
+        <p> 3. A hybrid model, where either the seller or the customer takes on the burden of ownership and associated risks and gets compensated for those risks accordingly. The business model and pricing architecture are designed in a manner that creates alignment of incentives between the seller and the customer and allows for distribution of the value from deployment of a Physical AI asset between the parties, where each party gets rewarded fairly for the contributions they make and the risks they carry. This structure should be carefully constructed by finance that understands the complexities of economic value creation and distribution in the Physical AI space.</p>
+        <p> The economics of a Physical AI asset depend on the cost to develop, the cost to build, the cost to deploy, the cost to serve, the cost to scale, and the cost to improve (capabilities, autonomy, utilization). They account for the full life cycle of the product, similar to how project finance for real estate projects works. The usual metrics of LTV/CAC or gross margin at the point of sale lose their relevance in favor of asset-level NPV, IRR, cost per unit of output, payback period, utilization rate, gross operating margins, etc. </p>
+        <h3 class="thought-heading">What does this mean?</h3>
+        <p> A Physical AI product has complex unit economics that takes into account the entire lifecycle of the product and the interdependencies between the various factors that impact a company's ability to capture the value that the product creates. Founders need to have a clear vision for how the economics of the asset look over time, where the cost per outcome sits today, what factors improve it, what milestones to go after, and how to allocate capital intelligently. Investors need to shift their analysis from "LTV/CAC" or "gross margins" to "what's the asset-level return at scale and maturity, how credible is the path down the cost curve, how important is investing in scale, does the ownership model create the right incentives, and what is the strategic moat for the business?" The economic value of a Physical AI asset is not fixed (at a point of sale or over a time period); it's volatile, outcome-driven, and full of multi-faceted complexities. It needs an open-minded finance function that is well-versed in the economic realities of innovation. And for a Physical AI company, that finance function needs to join the team early enough to develop the economic framework and guide the deployment of capital into the areas that make sense from financial and strategic points of view.</p>
+        <p class="thought-date">June 2026</p>
+      </div>
+    </div>
+
+    <div class="thought-detail" id="thought2" style="display:none">
+      <p class="thought-detail-title" onclick="closeThought('thought2')">AI Won't Replace Strategic Finance. It Will Expose the Weak Version of It. (WIP)</p>
+      <div class="thought-detail-text">
+        <p>Placecholder for first paragraph.</p>
+        <p>Placeholder for second paragraph.</p>
+        <p class="thought-date"> June 2026</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Nikolay Marcmin</p>
+  </footer>
+
+</body>
+
+<script>
+  function openThought(id) {
+    document.getElementById('thoughtsList').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closeThought(id) {
+    document.getElementById(id).style.display = 'none';
+    document.getElementById('thoughtsList').style.display = 'block';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const open = document.querySelector('.poem-detail[style*="block"]');
+      if (open) closeThought(open.id);
+    }
+  });
+</script>
+
+</html>

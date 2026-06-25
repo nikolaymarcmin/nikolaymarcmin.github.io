@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poems — Nikolay Marcmin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="thoughts.html">Thoughts</a>
+      <a href="poems.html">Poems</a>
+      <a href="photos.html">Photos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <h2>Poems</h2>
+    </section>
+
+    <div class="poems-list" id="poemsList">
+
+      <div class="poem-item" onclick="openPoem('poem1')">
+        <p class="poem-title-link">One or Two</p>
+      </div>
+
+      <div class="poem-item" onclick="openPoem('poem2')">
+        <p class="poem-title-link">Dance</p>
+      </div>
+
+    <div class="poem-item" onclick="openPoem('poem3')">
+        <p class="poem-title-link">Curated</p>
+      </div>
+
+
+    </div>
+
+    <div class="poem-detail" id="poem1" style="display:none">
+      <p class="poem-detail-title" onclick="closePoem('poem1')">One or Two</p>
+      <div class="poem-detail-text">
+        <p>
+          One or two centuries left, he said <br>
+          What a waste is to fight, only happiness left <br>
+          To be used as a compass to steer the ship <br>
+          When waves throw it sideways and tilting to hit <br>
+          The cliffs and the rocks way ahead of its course <br>
+          If it is meant to sink, why let it sink with remorse? <br>
+          Why do we bother about frivolous things <br>
+          Shall we redefine what it all means? <br>
+          We cover ourselves with material things <br>
+          To mask the deep pain that is burning inside <br>
+          The pain of being lost in the vast sea of might <br>
+          What might be the purpose <br>
+          What might be the goal <br>
+          What might have I felt <br>
+          If it wasn't for all <br>
+          For all of us carrying too much of the weight <br>
+          Of gifts of the nature extracted from depths <br>
+          Converted to cover the surface of earth <br>
+          With trash of old memories <br>
+          Crushing the soul <br>
+          The soul of the nature that's telling us stop <br>
+          Stop wasting your time, you don't have it at all <br>
+          Let it all burn and enjoy what is left <br>
+          Of your precious life force <br>
+          As it steers to death. <br>
+        </p>
+      </div>
+    </div>
+
+    <div class="poem-detail" id="poem2" style="display:none">
+      <p class="poem-detail-title" onclick="closePoem('poem2')">Dance</p>
+      <div class="poem-detail-text">
+        <p>
+          Dance. Don't watch your feet, <br>
+          Just dance, and feel the beat <br>
+          Just feel the music as it flows <br>
+          Just let it pass through you as it roars <br>
+          Turn up the volume, let it loud <br>
+          Accept the rhythm, get it out <br>
+          Out of your system, don't stay quiet <br>
+          And even if they try to keep it down <br>
+          Plug in another speaker and be proud <br>
+          Of how you feel the music moving <br>
+          Your body to the sounds of truly <br>
+          Something remarkable, get to it <br>
+          Respect creator and creation <br>
+          Of dance of life that is lived fully. <br>
+        </p>
+      </div>
+    </div>
+
+    <div class="poem-detail" id="poem3" style="display:none">
+      <p class="poem-detail-title" onclick="closePoem('poem3')">Curated</p>
+      <div class="poem-detail-text">
+        <p>
+          Curated. Generated. All connected <br>
+          We're striving for the life that is perfected <br>
+          Where our looks and words are being corrected <br>
+          By strangers who we let define <br>
+          Our inner worth, as if we are defective <br>
+          Where our thoughts stay locked inside <br>
+          In depths of our soul until reflected <br>
+          In our inner monologue of how and why <br>
+          We let ourselves to be projected <br>
+          As versions to the world, leaving behind <br>
+          What makes us different, unique, affected <br>
+          By our own experiences of life that add to <br>
+          The complexity of character we force to <br>
+          Embrace the hugs of loneliness. Protected <br>
+          From scrutiny of judgments but rejected  <br>
+          Our own voice saying love is not to be neglected. <br>
+        </p>
+      </div>
+    </div>
+    
+  </main>
+
+  <footer>
+    <p>© 2026 Nikolay Marcmin</p>
+  </footer>
+
+</body>
+
+<script>
+  function openPoem(id) {
+    document.getElementById('poemsList').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closePoem(id) {
+    document.getElementById(id).style.display = 'none';
+    document.getElementById('poemsList').style.display = 'block';
+  }
+</script>
+
+</html>
