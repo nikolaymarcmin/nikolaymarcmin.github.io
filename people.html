@@ -103,6 +103,8 @@
   ];
 
   let current = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
 
   function openPhoto(index) {
     current = index;
@@ -126,6 +128,27 @@
     if (e.key === 'ArrowLeft') changePhoto(-1);
     if (e.key === 'Escape') closeLightbox();
   });
+
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const diff = touchStartX - touchEndX;
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display !== 'flex') return;
+    if (Math.abs(diff) < 50) return;
+    if (diff > 0) {
+      changePhoto(1);
+    } else {
+      changePhoto(-1);
+    }
+  }
 </script>
 
 </html>
