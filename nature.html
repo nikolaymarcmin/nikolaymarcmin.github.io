@@ -25,7 +25,9 @@
       <h2>Nature</h2>
     </section>
 
-    <p class="gallery-note">This is a selection of street photography. For print purchases or to view additional photos, reach out at <a href="mailto:nick.marcmin@gmail.com">nick.marcmin@gmail.com</a></p>
+    <p class="gallery-note">This is a selection of photos capturing the essence of nature.<br>
+      All images on this website are the original work of Nikolay Marcmin and are protected under copyright law. They may not be copied, downloaded, reproduced, distributed, or used in any manner, commercial or personal, without prior written consent. To purchase prints or license images, please contact <a href="mailto:nick.marcmin@gmail.com">nick.marcmin@gmail.com</a><br>
+      © 2026 Nikolay Marcmin. All rights reserved. </p>
 
     <div class="photo-grid" id="photoGrid">
       <img src="images/nature/01.jpg" alt="Nature" onclick="openPhoto(0)">
@@ -91,6 +93,8 @@
   ];
 
   let current = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
 
   function openPhoto(index) {
     current = index;
@@ -114,6 +118,27 @@
     if (e.key === 'ArrowLeft') changePhoto(-1);
     if (e.key === 'Escape') closeLightbox();
   });
+
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  document.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const diff = touchStartX - touchEndX;
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox.style.display !== 'flex') return;
+    if (Math.abs(diff) < 50) return;
+    if (diff > 0) {
+      changePhoto(1);
+    } else {
+      changePhoto(-1);
+    }
+  }
 </script>
 
 </html>
