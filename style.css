@@ -107,7 +107,7 @@ footer {
 
 /* ── Page Header ── */
 .page-header {
-  padding: 32px 0 48px;
+  padding: 32px 0 40px;
   border-top: 1px solid #e0e0d8;
 }
 
@@ -115,7 +115,8 @@ footer {
   font-family: 'Gill Sans', serif;
   font-size: 36px;
   font-weight: 200;
-  letter-spacing: 1.0em;
+  color: #1a1a1a;
+  letter-spacing: 0.8em;
   text-transform: uppercase;
   opacity: 0.8;
 }
@@ -271,17 +272,18 @@ footer {
 
 /* ── Gallery Header ── */
 .gallery-header {
-  padding: 2px 0 40px;
+  padding: 2px 0 24px;
 }
 
 .gallery-header h2 {
-  font-family: 'Gill Sans', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #043d3f;
-  letter-spacing: 0.3em;
+
+  font-family: 'Gill Sans', serif;
+  font-size: 36px;
+  font-weight: 200;
+  color: #1a1a1a;
+  letter-spacing: 0.8em;
   text-transform: uppercase;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .gallery-back {
@@ -292,7 +294,7 @@ footer {
   text-decoration: none;
   color: #1a1a1a;
   opacity: 0.4;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   margin-top: 8px;
   transition: opacity 0.2s;
 }
@@ -306,10 +308,19 @@ footer {
   font-family: 'Gill Sans', sans-serif;
   font-size: 16px;
   line-height: 1.8;
-  color:  #043d3f;
-  opacity: 0.4;
-  padding: 2px 0 64px;
+  color:  #4a5b5c;
+  opacity: 0.6;
+  padding: 6px 0 64px;
   border-top: 1px solid #e2e2ab;
+}
+.gallery-intro {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 20px;
+  line-height: 1.8;
+  color:  #043d3f;
+  opacity: 0.8;
+  padding: 12px 0 32px;
+  border-top: 1px solid #898a8a;
 }
 
 .gallery-note a {
