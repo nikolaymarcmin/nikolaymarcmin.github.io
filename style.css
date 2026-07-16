@@ -480,3 +480,58 @@ footer {
   opacity: 0.6;
   margin-top: 48px;
 }
+
+/* ── Advisory ── */
+.advisory {
+  padding: 0 0 24px;
+}
+
+.advisory-intro {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.advisory p {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #043f3a;
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+
+.advisory-service-title {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 14px !important;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 24px !important;
+}
+
+.advisory-conclusion {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #1a1a1a;
+  margin-top: 0px;
+}
+
+.advisory-email {
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.advisory-email:hover {
+  opacity: 1;
+}
